@@ -19,8 +19,8 @@
 +(NSArray *)allDiningHalls;
 +(instancetype)diningHallOfType:(MMDiningHallType)type;
 
--(void)fetchMenuInformationForToday:(id)completion;
--(void)fetchMenuInformationForDate:(NSDate *)date completion:(id)completion;
+-(void)fetchMenuInformationForToday:(MMFetchCompletionBlock)completion;
+-(void)fetchMenuInformationForDate:(NSDate *)date completion:(MMFetchCompletionBlock)completion;
 
 -(MMMenu *)menuInformationForToday;
 -(MMMenu *)menuInformationForDate:(NSDate *)date;

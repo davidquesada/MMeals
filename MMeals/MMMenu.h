@@ -11,10 +11,11 @@
 
 @interface MMMenu : NSObject
 
+// MMMealType is also a bitmask that allows you to select courses for multiple meals at once.
 -(NSArray *)coursesForMeal:(MMMealType)mealType;
 
--(NSArray *)breakfast;
--(NSArray *)lunch;
--(NSArray *)dinner;
+@property (readonly) NSArray *breakfastCourses;
+@property (readonly) NSArray *lunchCourses;
+@property (readonly) NSArray *dinnerCourses;
 
 @end

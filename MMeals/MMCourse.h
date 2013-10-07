@@ -13,4 +13,7 @@
 @property (readonly) NSString *name;
 @property (readonly) NSArray *items;
 
+// This should be moved to somewhere more private.
+-(instancetype)courseByMergingItems:(NSArray *)items;
+
 @end

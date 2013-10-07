@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6354DFF71802722500F0D96F /* MMNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6354DFF61802722500F0D96F /* MMNetworkInterface.m */; };
 		635FA88618024F9D00AF4226 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635FA88518024F9D00AF4226 /* Foundation.framework */; };
 		635FA88B18024F9D00AF4226 /* MMeals.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 635FA88A18024F9D00AF4226 /* MMeals.h */; };
 		635FA89418024F9D00AF4226 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635FA89318024F9D00AF4226 /* XCTest.framework */; };
@@ -45,6 +46,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6354DFF51802722500F0D96F /* MMNetworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMNetworkInterface.h; path = Network/MMNetworkInterface.h; sourceTree = "<group>"; };
+		6354DFF61802722500F0D96F /* MMNetworkInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMNetworkInterface.m; path = Network/MMNetworkInterface.m; sourceTree = "<group>"; };
+		6354DFF8180273D300F0D96F /* MMDiningHallPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDiningHallPrivate.h; path = Network/MMDiningHallPrivate.h; sourceTree = "<group>"; };
 		635FA88218024F9C00AF4226 /* libMMeals.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMMeals.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		635FA88518024F9D00AF4226 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		635FA88918024F9D00AF4226 /* MMeals-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MMeals-Prefix.pch"; sourceTree = "<group>"; };
@@ -89,6 +93,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6354DFF41802720C00F0D96F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6354DFF51802722500F0D96F /* MMNetworkInterface.h */,
+				6354DFF61802722500F0D96F /* MMNetworkInterface.m */,
+				6354DFF8180273D300F0D96F /* MMDiningHallPrivate.h */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		635FA87918024F9C00AF4226 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +135,7 @@
 		635FA88718024F9D00AF4226 /* MMeals */ = {
 			isa = PBXGroup;
 			children = (
+				6354DFF41802720C00F0D96F /* Network */,
 				635FA8B218025A3700AF4226 /* MMCourse.h */,
 				635FA8B318025A3700AF4226 /* MMCourse.m */,
 				635FA8AB180250ED00AF4226 /* MMDiningHall.h */,
@@ -244,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6354DFF71802722500F0D96F /* MMNetworkInterface.m in Sources */,
 				635FA8B718025AED00AF4226 /* MMMenuItem.m in Sources */,
 				635FA8B418025A3700AF4226 /* MMCourse.m in Sources */,
 				635FA8B0180258C600AF4226 /* MMMenu.m in Sources */,
