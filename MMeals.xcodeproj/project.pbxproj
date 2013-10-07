@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		635FA88618024F9D00AF4226 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635FA88518024F9D00AF4226 /* Foundation.framework */; };
+		635FA88B18024F9D00AF4226 /* MMeals.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 635FA88A18024F9D00AF4226 /* MMeals.h */; };
+		635FA89418024F9D00AF4226 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635FA89318024F9D00AF4226 /* XCTest.framework */; };
+		635FA89518024F9D00AF4226 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635FA88518024F9D00AF4226 /* Foundation.framework */; };
+		635FA89718024F9D00AF4226 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635FA89618024F9D00AF4226 /* UIKit.framework */; };
+		635FA89A18024F9D00AF4226 /* libMMeals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 635FA88218024F9C00AF4226 /* libMMeals.a */; };
+		635FA8A018024F9D00AF4226 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 635FA89E18024F9D00AF4226 /* InfoPlist.strings */; };
+		635FA8A218024F9D00AF4226 /* MMealsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8A118024F9D00AF4226 /* MMealsTests.m */; };
+		635FA8AD180250ED00AF4226 /* MMDiningHall.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8AC180250ED00AF4226 /* MMDiningHall.m */; };
+		635FA8B0180258C600AF4226 /* MMMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8AF180258C600AF4226 /* MMMenu.m */; };
+		635FA8B418025A3700AF4226 /* MMCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8B318025A3700AF4226 /* MMCourse.m */; };
+		635FA8B718025AED00AF4226 /* MMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8B618025AED00AF4226 /* MMMenuItem.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		635FA89818024F9D00AF4226 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 635FA87A18024F9C00AF4226 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 635FA88118024F9C00AF4226;
+			remoteInfo = MMeals;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		635FA88018024F9C00AF4226 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				635FA88B18024F9D00AF4226 /* MMeals.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		635FA88218024F9C00AF4226 /* libMMeals.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMMeals.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		635FA88518024F9D00AF4226 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		635FA88918024F9D00AF4226 /* MMeals-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MMeals-Prefix.pch"; sourceTree = "<group>"; };
+		635FA88A18024F9D00AF4226 /* MMeals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMeals.h; sourceTree = "<group>"; };
+		635FA89218024F9D00AF4226 /* MMealsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMealsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		635FA89318024F9D00AF4226 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		635FA89618024F9D00AF4226 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		635FA89D18024F9D00AF4226 /* MMealsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MMealsTests-Info.plist"; sourceTree = "<group>"; };
+		635FA89F18024F9D00AF4226 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		635FA8A118024F9D00AF4226 /* MMealsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMealsTests.m; sourceTree = "<group>"; };
+		635FA8AB180250ED00AF4226 /* MMDiningHall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDiningHall.h; sourceTree = "<group>"; };
+		635FA8AC180250ED00AF4226 /* MMDiningHall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDiningHall.m; sourceTree = "<group>"; };
+		635FA8AE180258C600AF4226 /* MMMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMenu.h; sourceTree = "<group>"; };
+		635FA8AF180258C600AF4226 /* MMMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMenu.m; sourceTree = "<group>"; };
+		635FA8B11802592D00AF4226 /* MMealsBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMealsBase.h; sourceTree = "<group>"; };
+		635FA8B218025A3700AF4226 /* MMCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCourse.h; sourceTree = "<group>"; };
+		635FA8B318025A3700AF4226 /* MMCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCourse.m; sourceTree = "<group>"; };
+		635FA8B518025AED00AF4226 /* MMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMenuItem.h; sourceTree = "<group>"; };
+		635FA8B618025AED00AF4226 /* MMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMenuItem.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		635FA87F18024F9C00AF4226 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635FA88618024F9D00AF4226 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		635FA88F18024F9D00AF4226 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635FA89A18024F9D00AF4226 /* libMMeals.a in Frameworks */,
+				635FA89418024F9D00AF4226 /* XCTest.framework in Frameworks */,
+				635FA89718024F9D00AF4226 /* UIKit.framework in Frameworks */,
+				635FA89518024F9D00AF4226 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		635FA87918024F9C00AF4226 = {
+			isa = PBXGroup;
+			children = (
+				635FA88718024F9D00AF4226 /* MMeals */,
+				635FA89B18024F9D00AF4226 /* MMealsTests */,
+				635FA88418024F9C00AF4226 /* Frameworks */,
+				635FA88318024F9C00AF4226 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		635FA88318024F9C00AF4226 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				635FA88218024F9C00AF4226 /* libMMeals.a */,
+				635FA89218024F9D00AF4226 /* MMealsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		635FA88418024F9C00AF4226 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				635FA88518024F9D00AF4226 /* Foundation.framework */,
+				635FA89318024F9D00AF4226 /* XCTest.framework */,
+				635FA89618024F9D00AF4226 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		635FA88718024F9D00AF4226 /* MMeals */ = {
+			isa = PBXGroup;
+			children = (
+				635FA8B218025A3700AF4226 /* MMCourse.h */,
+				635FA8B318025A3700AF4226 /* MMCourse.m */,
+				635FA8AB180250ED00AF4226 /* MMDiningHall.h */,
+				635FA8AC180250ED00AF4226 /* MMDiningHall.m */,
+				635FA88A18024F9D00AF4226 /* MMeals.h */,
+				635FA8B11802592D00AF4226 /* MMealsBase.h */,
+				635FA8AE180258C600AF4226 /* MMMenu.h */,
+				635FA8AF180258C600AF4226 /* MMMenu.m */,
+				635FA8B518025AED00AF4226 /* MMMenuItem.h */,
+				635FA8B618025AED00AF4226 /* MMMenuItem.m */,
+				635FA88818024F9D00AF4226 /* Supporting Files */,
+			);
+			path = MMeals;
+			sourceTree = "<group>";
+		};
+		635FA88818024F9D00AF4226 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				635FA88918024F9D00AF4226 /* MMeals-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		635FA89B18024F9D00AF4226 /* MMealsTests */ = {
+			isa = PBXGroup;
+			children = (
+				635FA8A118024F9D00AF4226 /* MMealsTests.m */,
+				635FA89C18024F9D00AF4226 /* Supporting Files */,
+			);
+			path = MMealsTests;
+			sourceTree = "<group>";
+		};
+		635FA89C18024F9D00AF4226 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				635FA89D18024F9D00AF4226 /* MMealsTests-Info.plist */,
+				635FA89E18024F9D00AF4226 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		635FA88118024F9C00AF4226 /* MMeals */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 635FA8A518024F9D00AF4226 /* Build configuration list for PBXNativeTarget "MMeals" */;
+			buildPhases = (
+				635FA87E18024F9C00AF4226 /* Sources */,
+				635FA87F18024F9C00AF4226 /* Frameworks */,
+				635FA88018024F9C00AF4226 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MMeals;
+			productName = MMeals;
+			productReference = 635FA88218024F9C00AF4226 /* libMMeals.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		635FA89118024F9D00AF4226 /* MMealsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 635FA8A818024F9D00AF4226 /* Build configuration list for PBXNativeTarget "MMealsTests" */;
+			buildPhases = (
+				635FA88E18024F9D00AF4226 /* Sources */,
+				635FA88F18024F9D00AF4226 /* Frameworks */,
+				635FA89018024F9D00AF4226 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				635FA89918024F9D00AF4226 /* PBXTargetDependency */,
+			);
+			name = MMealsTests;
+			productName = MMealsTests;
+			productReference = 635FA89218024F9D00AF4226 /* MMealsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		635FA87A18024F9C00AF4226 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MM;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "David Quesada";
+			};
+			buildConfigurationList = 635FA87D18024F9C00AF4226 /* Build configuration list for PBXProject "MMeals" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 635FA87918024F9C00AF4226;
+			productRefGroup = 635FA88318024F9C00AF4226 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				635FA88118024F9C00AF4226 /* MMeals */,
+				635FA89118024F9D00AF4226 /* MMealsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		635FA89018024F9D00AF4226 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635FA8A018024F9D00AF4226 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		635FA87E18024F9C00AF4226 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635FA8B718025AED00AF4226 /* MMMenuItem.m in Sources */,
+				635FA8B418025A3700AF4226 /* MMCourse.m in Sources */,
+				635FA8B0180258C600AF4226 /* MMMenu.m in Sources */,
+				635FA8AD180250ED00AF4226 /* MMDiningHall.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		635FA88E18024F9D00AF4226 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635FA8A218024F9D00AF4226 /* MMealsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		635FA89918024F9D00AF4226 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 635FA88118024F9C00AF4226 /* MMeals */;
+			targetProxy = 635FA89818024F9D00AF4226 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		635FA89E18024F9D00AF4226 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				635FA89F18024F9D00AF4226 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		635FA8A318024F9D00AF4226 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		635FA8A418024F9D00AF4226 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		635FA8A618024F9D00AF4226 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MMeals.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MMeals/MMeals-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		635FA8A718024F9D00AF4226 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MMeals.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MMeals/MMeals-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		635FA8A918024F9D00AF4226 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MMeals/MMeals-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MMealsTests/MMealsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		635FA8AA18024F9D00AF4226 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MMeals/MMeals-Prefix.pch";
+				INFOPLIST_FILE = "MMealsTests/MMealsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		635FA87D18024F9C00AF4226 /* Build configuration list for PBXProject "MMeals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				635FA8A318024F9D00AF4226 /* Debug */,
+				635FA8A418024F9D00AF4226 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		635FA8A518024F9D00AF4226 /* Build configuration list for PBXNativeTarget "MMeals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				635FA8A618024F9D00AF4226 /* Debug */,
+				635FA8A718024F9D00AF4226 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		635FA8A818024F9D00AF4226 /* Build configuration list for PBXNativeTarget "MMealsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				635FA8A918024F9D00AF4226 /* Debug */,
+				635FA8AA18024F9D00AF4226 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 635FA87A18024F9C00AF4226 /* Project object */;
+}
