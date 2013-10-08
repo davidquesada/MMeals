@@ -14,7 +14,7 @@
 
 @implementation MMNetworkInterface
 
--(void)fetchMenuForDiningHall:(MMDiningHall *)hall date:(NSDate *)date completion:(MMNetworkCompletionBlock)completion
++(void)fetchMenuForDiningHall:(MMDiningHall *)hall date:(NSDate *)date completion:(MMNetworkCompletionBlock)completion
 {
     
 }

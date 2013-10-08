@@ -8,6 +8,7 @@
 
 #import "MMDiningHall.h"
 #import "MMDiningHallPrivate.h"
+#import "MMNetworkInterface.h"
 
 NSArray *diningHallTypes;
 NSArray *diningHallInstances;
@@ -134,8 +135,13 @@ NSInteger dateReference(NSDate *date)
         return;
     }
     
-    NSLog(@"TODO: Download information from the server here.");
-    
+    [MMNetworkInterface fetchMenuForDiningHall:self date:date completion:^(MMMenu *menu) {
+        if (menu == nil)
+            return; // TODO: Handle the case of errors.
+        
+        self.menuInformation[@(ref)] = menu;
+        obtainedInformation();
+    }];
 }
 
 -(MMMenu *)menuInformationForToday
