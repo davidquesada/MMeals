@@ -32,17 +32,4 @@
     //XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
-- (void)testClassesDisallowInit
-{
-    MMCourse *course = [[MMCourse alloc] init];
-    MMDiningHall *hall = [[MMDiningHall alloc] init];
-    MMMenu *menu = [[MMMenu alloc] init];
-    MMMenuItem *item = [[MMMenuItem alloc] init];
-    
-    XCTAssertNil(course, @"MMCourse allows init.");
-    XCTAssertNil(hall, @"MMDiningHall allows init.");
-    XCTAssertNil(menu, @"MMMenu allows init.");
-    XCTAssertNil(item, @"MMMenuItem allows init.");
-}
-
 @end
