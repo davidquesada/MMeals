@@ -51,15 +51,15 @@ NSInteger dateReference(NSDate *date)
 {
 #define CREATE(Type,Name,Location) [[MMDiningHall alloc] initWithType:Type name:Name location:Location]
     diningHalls = @{
-                    @(MMDiningHallBarbour)      : CREATE(MMDiningHallBarbour, @"Barbour", @""),
+                    @(MMDiningHallBarbour)      : CREATE(MMDiningHallBarbour, @"Barbour", @"BARBOUR DINING HALL"),
                     @(MMDiningHallBursley)      : CREATE(MMDiningHallBursley, @"Bursley", @"BURSLEY DINING HALL"),
-                    @(MMDiningHallEastQuad)     : CREATE(MMDiningHallEastQuad, @"East Quad", @""),
-                    @(MMDiningHallMarketplace)  : CREATE(MMDiningHallMarketplace, @"Marketplace at Hill", @""),
-                    @(MMDiningHallMarkley)      : CREATE(MMDiningHallMarkley, @"Markley", @""),
-                    @(MMDiningHallNorthQuad)    : CREATE(MMDiningHallNorthQuad, @"North Quad", @""),
-                    @(MMDiningHallSouthQuad)    : CREATE(MMDiningHallSouthQuad, @"South Quad", @""),
-                    @(MMDiningHallTwigs)        : CREATE(MMDiningHallTwigs, @"Twigs", @""),
-                    @(MMDiningHallWestQuad)     : CREATE(MMDiningHallWestQuad, @"West Quad", @""),
+                    @(MMDiningHallEastQuad)     : CREATE(MMDiningHallEastQuad, @"East Quad", @"EAST QUAD DINING HALL"),
+                    @(MMDiningHallMarketplace)  : CREATE(MMDiningHallMarketplace, @"Marketplace at Hill", @"MARKETPLACE"),
+                    @(MMDiningHallMarkley)      : CREATE(MMDiningHallMarkley, @"Markley", @"MARKLEY DINING HALL"),
+                    @(MMDiningHallNorthQuad)    : CREATE(MMDiningHallNorthQuad, @"North Quad", @"North Quad Dining Hall"),
+                    @(MMDiningHallSouthQuad)    : CREATE(MMDiningHallSouthQuad, @"South Quad", @"SOUTH QUAD DINING HALL"),
+                    @(MMDiningHallTwigs)        : CREATE(MMDiningHallTwigs, @"Twigs", @"Twigs at Oxford"),
+                    @(MMDiningHallWestQuad)     : CREATE(MMDiningHallWestQuad, @"West Quad", @"WEST QUAD DINING HALL"),
                     };
 #undef CREATE
     
