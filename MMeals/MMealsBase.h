@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, MMDiningHallType)
 
 typedef NS_ENUM(NSInteger, MMMealType)
 {
+    MMMealTypeNone = 0,
     MMMealTypeBreakfast = 1 << 0,
     MMMealTypeLunch = 1 << 1,
     MMMealTypeDinner = 1 << 2,

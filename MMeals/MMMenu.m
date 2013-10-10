@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 David Quesada. All rights reserved.
 //
 
-#import "MMMenu.h"
+#import "MMMenuPrivate.h"
 #import "MMCourse.h"
 
 @interface MMMenu ()
@@ -22,11 +22,6 @@
 @end
 
 @implementation MMMenu
-
--(id)init
-{
-    return nil;
-}
 
 -(instancetype)initWithCourseArrays:(NSArray *)arrays
 {
@@ -63,6 +58,16 @@
         array = [self mergeCourseArrays:array other:self.dinnerCourses];
     
     return array;
+}
+
+-(void)setCourses:(NSArray *)courses forMeal:(MMMealType)meal
+{
+    if (meal == MMMealTypeBreakfast)
+        self.breakfastCourses = courses.copy;
+    else if (meal == MMMealTypeLunch)
+        self.lunchCourses = courses.copy;
+    else if (meal == MMMealTypeDinner)
+        self.dinnerCourses = courses.copy;
 }
 
 -(NSArray *)mergeCourseArrays:(NSArray *)array1 other:(NSArray *)array2

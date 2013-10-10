@@ -10,6 +10,8 @@
 
 @interface MMMenuItem ()
 
+@property (readwrite) NSString *name;
+
 @property (readwrite) int calories;
 @property (readwrite) int caloriesFromFat;
 
@@ -28,10 +30,5 @@
 @end
 
 @implementation MMMenuItem
-
--(id)init
-{
-    return nil;
-}
 
 @end
