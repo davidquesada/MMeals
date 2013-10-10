@@ -83,7 +83,7 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict)
         // weekend breakfasts, where there is one course that contains a notice indicating
         // that the dining hall isn't serving breafast.), turn the dictionary representing
         // the course into an array containing the dictionary.
-        if (![courses isKindOfClass:[NSArray class]])
+        if (![courses isKindOfClass:[NSArray class]] && courses)
             courses = @[ courses ];
         
         NSMutableArray *mealCourses = [[NSMutableArray alloc] init];

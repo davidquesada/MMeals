@@ -137,8 +137,10 @@ NSInteger dateReference(NSDate *date)
     
     [MMNetworkInterface fetchMenuForDiningHall:self date:date completion:^(MMMenu *menu) {
         if (menu == nil)
+        {
+            obtainedInformation();
             return; // TODO: Handle the case of errors.
-        
+        }
         self.menuInformation[@(ref)] = menu;
         obtainedInformation();
     }];
