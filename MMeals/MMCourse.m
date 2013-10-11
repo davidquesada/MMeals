@@ -19,11 +19,6 @@
 
 @implementation MMCourse
 
-- (id)init
-{
-    return nil;
-}
-
 -(instancetype)initWithName:(NSString *)name items:(NSArray *)items
 {
     self = [super init];
