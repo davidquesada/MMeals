@@ -27,4 +27,6 @@ typedef NS_ENUM(NSInteger, MMMealType)
     MMMealTypeDinner = 1 << 2,
 };
 
+NSString *MMMealTypeToString(MMMealType type);
+
 typedef void (^MMFetchCompletionBlock)(void);

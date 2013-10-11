@@ -20,6 +20,7 @@
 		635FA8B0180258C600AF4226 /* MMMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8AF180258C600AF4226 /* MMMenu.m */; };
 		635FA8B418025A3700AF4226 /* MMCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8B318025A3700AF4226 /* MMCourse.m */; };
 		635FA8B718025AED00AF4226 /* MMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8B618025AED00AF4226 /* MMMenuItem.m */; };
+		63A2327618088E9400353A6C /* MMeals.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A2327518088E9400353A6C /* MMeals.m */; };
 		63ED8A9318067EB800EFD36C /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ED8A9218067EB800EFD36C /* XMLDictionary.m */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		635FA8B318025A3700AF4226 /* MMCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCourse.m; sourceTree = "<group>"; };
 		635FA8B518025AED00AF4226 /* MMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMenuItem.h; sourceTree = "<group>"; };
 		635FA8B618025AED00AF4226 /* MMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMenuItem.m; sourceTree = "<group>"; };
+		63A2327518088E9400353A6C /* MMeals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMeals.m; sourceTree = "<group>"; };
 		63ED8A8F1806746B00EFD36C /* MMMenuPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MMMenuPrivate.h; path = Network/MMMenuPrivate.h; sourceTree = "<group>"; };
 		63ED8A9118067EB800EFD36C /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLDictionary.h; path = Network/XMLDictionary/XMLDictionary.h; sourceTree = "<group>"; };
 		63ED8A9218067EB800EFD36C /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLDictionary.m; path = Network/XMLDictionary/XMLDictionary.m; sourceTree = "<group>"; };
@@ -143,17 +145,18 @@
 		635FA88718024F9D00AF4226 /* MMeals */ = {
 			isa = PBXGroup;
 			children = (
-				6354DFF41802720C00F0D96F /* Network */,
 				635FA8B218025A3700AF4226 /* MMCourse.h */,
 				635FA8B318025A3700AF4226 /* MMCourse.m */,
 				635FA8AB180250ED00AF4226 /* MMDiningHall.h */,
 				635FA8AC180250ED00AF4226 /* MMDiningHall.m */,
 				635FA88A18024F9D00AF4226 /* MMeals.h */,
+				63A2327518088E9400353A6C /* MMeals.m */,
 				635FA8B11802592D00AF4226 /* MMealsBase.h */,
 				635FA8AE180258C600AF4226 /* MMMenu.h */,
 				635FA8AF180258C600AF4226 /* MMMenu.m */,
 				635FA8B518025AED00AF4226 /* MMMenuItem.h */,
 				635FA8B618025AED00AF4226 /* MMMenuItem.m */,
+				6354DFF41802720C00F0D96F /* Network */,
 				635FA88818024F9D00AF4226 /* Supporting Files */,
 			);
 			path = MMeals;
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6354DFF71802722500F0D96F /* MMNetworkInterface.m in Sources */,
+				63A2327618088E9400353A6C /* MMeals.m in Sources */,
 				635FA8B718025AED00AF4226 /* MMMenuItem.m in Sources */,
 				63ED8A9318067EB800EFD36C /* XMLDictionary.m in Sources */,
 				635FA8B418025A3700AF4226 /* MMCourse.m in Sources */,
