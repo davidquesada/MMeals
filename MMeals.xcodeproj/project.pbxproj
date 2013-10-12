@@ -12,7 +12,6 @@
 		635FA88B18024F9D00AF4226 /* MMeals.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 635FA88A18024F9D00AF4226 /* MMeals.h */; };
 		635FA89418024F9D00AF4226 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635FA89318024F9D00AF4226 /* XCTest.framework */; };
 		635FA89518024F9D00AF4226 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635FA88518024F9D00AF4226 /* Foundation.framework */; };
-		635FA89718024F9D00AF4226 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635FA89618024F9D00AF4226 /* UIKit.framework */; };
 		635FA89A18024F9D00AF4226 /* libMMeals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 635FA88218024F9C00AF4226 /* libMMeals.a */; };
 		635FA8A018024F9D00AF4226 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 635FA89E18024F9D00AF4226 /* InfoPlist.strings */; };
 		635FA8A218024F9D00AF4226 /* MMealsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8A118024F9D00AF4226 /* MMealsTests.m */; };
@@ -58,7 +57,6 @@
 		635FA88A18024F9D00AF4226 /* MMeals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMeals.h; sourceTree = "<group>"; };
 		635FA89218024F9D00AF4226 /* MMealsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMealsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		635FA89318024F9D00AF4226 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		635FA89618024F9D00AF4226 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		635FA89D18024F9D00AF4226 /* MMealsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MMealsTests-Info.plist"; sourceTree = "<group>"; };
 		635FA89F18024F9D00AF4226 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		635FA8A118024F9D00AF4226 /* MMealsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMealsTests.m; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 			files = (
 				635FA89A18024F9D00AF4226 /* libMMeals.a in Frameworks */,
 				635FA89418024F9D00AF4226 /* XCTest.framework in Frameworks */,
-				635FA89718024F9D00AF4226 /* UIKit.framework in Frameworks */,
 				635FA89518024F9D00AF4226 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,7 +139,6 @@
 			children = (
 				635FA88518024F9D00AF4226 /* Foundation.framework */,
 				635FA89318024F9D00AF4226 /* XCTest.framework */,
-				635FA89618024F9D00AF4226 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
