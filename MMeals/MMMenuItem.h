@@ -22,7 +22,7 @@
 @property (readonly) int cholesterol;
 @property (readonly) int sodium;
 
-@property (readonly) int carbohydates;
+@property (readonly) int carbohydrates;
 @property (readonly) int fiber;
 @property (readonly) int sugar;
 @property (readonly) int protein;

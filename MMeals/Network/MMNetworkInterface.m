@@ -97,7 +97,7 @@ MMMenuItem *menuItemFromDictionary(NSDictionary *dict)
     menuItem.transFat = [nutrition[@"fatrn"] intValue];
     menuItem.cholesterol = [nutrition[@"chol"] intValue];
     menuItem.sodium = [nutrition[@"na"] intValue];
-    menuItem.carbohydates = [nutrition[@"cho"] intValue];
+    menuItem.carbohydrates = [nutrition[@"cho"] intValue];
     menuItem.fiber = [nutrition[@"tdfb"] intValue];
     menuItem.sugar = [nutrition[@"sugar"] intValue];
     menuItem.protein = [nutrition[@"pro"] intValue];

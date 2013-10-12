@@ -22,7 +22,7 @@
 @property (readwrite) int cholesterol;
 @property (readwrite) int sodium;
 
-@property (readwrite) int carbohydates;
+@property (readwrite) int carbohydrates;
 @property (readwrite) int fiber;
 @property (readwrite) int sugar;
 @property (readwrite) int protein;

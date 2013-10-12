@@ -88,7 +88,7 @@
         XCTAssertTrue(item.transFat == 0, @"Wrong trans fat count!");
         XCTAssertTrue(item.cholesterol == 88, @"Wrong cholesterol count!");
         XCTAssertTrue(item.sodium == 654, @"Wrong sodium count!");
-        XCTAssertTrue(item.carbohydates == 5, @"Wrong carbohydate count!");
+        XCTAssertTrue(item.carbohydrates == 5, @"Wrong carbohydrate count!");
         XCTAssertTrue(item.fiber == 2, @"Wrong fiber count!");
         XCTAssertTrue(item.sugar == 3, @"Wrong sugar count!");
         XCTAssertTrue(item.protein == 32, @"Wrong protein count!");
