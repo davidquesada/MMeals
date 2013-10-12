@@ -65,6 +65,40 @@
     [self waitForDone];
 }
 
+-(void)testSimpleNutritionExample
+{
+    MMDiningHall *bursley = [MMDiningHall diningHallOfType:MMDiningHallBursley];
+    NSDate *date = [NSDate dateWithSimpleFormat:@"2013-10-8"];
+    
+    [bursley fetchMenuInformationForDate:date completion:^{
+        self.done = YES;
+        
+        MMMenu *menu = [bursley menuInformationForDate:date];
+        NSArray *lunch = menu.lunchCourses;
+        MMCourse *salads = lunch[2];
+        MMMenuItem *item = salads.items[0];
+        
+        XCTAssertEqualObjects(salads.name, @"Salad", @"Wrong course name!");
+        XCTAssertEqualObjects(item.name, @"Buffalo Chicken Salad", @"Wrong menu item name!");
+        
+        XCTAssertTrue(item.calories == 240, @"Wrong calorie count!");
+        XCTAssertTrue(item.caloriesFromFat == 79, @"Wrong fat calorie count!");
+        XCTAssertTrue(item.fat == 9, @"Wrong fat count!");
+        XCTAssertTrue(item.saturatedFat == 2, @"Wrong saturated fat count!");
+        XCTAssertTrue(item.transFat == 0, @"Wrong trans fat count!");
+        XCTAssertTrue(item.cholesterol == 88, @"Wrong cholesterol count!");
+        XCTAssertTrue(item.sodium == 654, @"Wrong sodium count!");
+        XCTAssertTrue(item.carbohydates == 5, @"Wrong carbohydate count!");
+        XCTAssertTrue(item.fiber == 2, @"Wrong fiber count!");
+        XCTAssertTrue(item.sugar == 3, @"Wrong sugar count!");
+        XCTAssertTrue(item.protein == 32, @"Wrong protein count!");
+        XCTAssertTrue(item.portionSize == 271, @"Wrong portion size (grams)!");
+        XCTAssertTrue([item.servingSize isEqualToString:@"Salad"], @"Wrong serving size (description)!");
+        
+    }];
+    [self waitForDone];
+}
+
 -(void)waitForDone
 {
     NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:4.0f];
