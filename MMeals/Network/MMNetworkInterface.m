@@ -49,7 +49,13 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict);
 
 +(NSString *)generateURLForRequestForDiningHall:(MMDiningHall *)hall date:(NSDate *)menuDate
 {
-    NSString *format = @"http://www.housing.umich.edu/files/helper_files/js/menu2xml.php?location=%@&date=%@";
+    // Adding the "display=WebMenu" slightly changes the courses returned.
+    /*
+        E.g. West Quad Dinner on October 11, 2013
+        - with WebMenu: Soup, Salad, Homestyles, Olive Branch, Salsa, Dessert
+        - w/o  WebMenu: Soup, Salad, Homestyles, Olive Branch, Olive Branch Accompaniments, Salsa, Salsa Accompaniments, Dessert
+     */
+    NSString *format = @"http://www.housing.umich.edu/files/helper_files/js/menu2xml.php?location=%@&date=%@&display=WebMenu";
     NSString *location = [hall.locationParameter stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *date = [dateFormatter stringFromDate:menuDate];
     
