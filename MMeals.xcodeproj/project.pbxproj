@@ -20,6 +20,7 @@
 		635FA8B0180258C600AF4226 /* MMMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8AF180258C600AF4226 /* MMMenu.m */; };
 		635FA8B418025A3700AF4226 /* MMCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8B318025A3700AF4226 /* MMCourse.m */; };
 		635FA8B718025AED00AF4226 /* MMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8B618025AED00AF4226 /* MMMenuItem.m */; };
+		639645511808B98C00CCAE55 /* NSDate+SimpleFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 639645501808B98C00CCAE55 /* NSDate+SimpleFormatting.m */; };
 		63A2327618088E9400353A6C /* MMeals.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A2327518088E9400353A6C /* MMeals.m */; };
 		63ED8A9318067EB800EFD36C /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ED8A9218067EB800EFD36C /* XMLDictionary.m */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,9 @@
 		635FA8B318025A3700AF4226 /* MMCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCourse.m; sourceTree = "<group>"; };
 		635FA8B518025AED00AF4226 /* MMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMenuItem.h; sourceTree = "<group>"; };
 		635FA8B618025AED00AF4226 /* MMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMenuItem.m; sourceTree = "<group>"; };
+		6396454D1808B6B400CCAE55 /* MMMenuItemPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MMMenuItemPrivate.h; path = Network/MMMenuItemPrivate.h; sourceTree = "<group>"; };
+		6396454F1808B98C00CCAE55 /* NSDate+SimpleFormatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+SimpleFormatting.h"; path = "Categories/NSDate+SimpleFormatting.h"; sourceTree = "<group>"; };
+		639645501808B98C00CCAE55 /* NSDate+SimpleFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+SimpleFormatting.m"; path = "Categories/NSDate+SimpleFormatting.m"; sourceTree = "<group>"; };
 		63A2327518088E9400353A6C /* MMeals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMeals.m; sourceTree = "<group>"; };
 		63ED8A8F1806746B00EFD36C /* MMMenuPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MMMenuPrivate.h; path = Network/MMMenuPrivate.h; sourceTree = "<group>"; };
 		63ED8A9118067EB800EFD36C /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLDictionary.h; path = Network/XMLDictionary/XMLDictionary.h; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 				6354DFF8180273D300F0D96F /* MMDiningHallPrivate.h */,
 				63ED8A8F1806746B00EFD36C /* MMMenuPrivate.h */,
 				63ED8A941806849100EFD36C /* MMCoursePrivate.h */,
+				6396454D1808B6B400CCAE55 /* MMMenuItemPrivate.h */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 		635FA89B18024F9D00AF4226 /* MMealsTests */ = {
 			isa = PBXGroup;
 			children = (
+				6396454E1808B97700CCAE55 /* Categories */,
 				635FA8A118024F9D00AF4226 /* MMealsTests.m */,
 				635FA89C18024F9D00AF4226 /* Supporting Files */,
 			);
@@ -186,6 +192,15 @@
 				635FA89E18024F9D00AF4226 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6396454E1808B97700CCAE55 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6396454F1808B98C00CCAE55 /* NSDate+SimpleFormatting.h */,
+				639645501808B98C00CCAE55 /* NSDate+SimpleFormatting.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		63ED8A9018067EA100EFD36C /* XMLDictionary */ = {
@@ -294,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				635FA8A218024F9D00AF4226 /* MMealsTests.m in Sources */,
+				639645511808B98C00CCAE55 /* NSDate+SimpleFormatting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

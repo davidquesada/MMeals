@@ -10,7 +10,7 @@
 #import "MMDiningHallPrivate.h"
 #import "MMMenuPrivate.h"
 #import "MMCoursePrivate.h"
-#import "MMMenuItem.h"
+#import "MMMenuItemPrivate.h"
 #import "XMLDictionary.h"
 
 NSDateFormatter *dateFormatter;
@@ -66,6 +66,45 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict);
 
 MMMealType mealTypeFromString(NSString *string);
 
+MMMenuItem *menuItemFromDictionary(NSDictionary *dict)
+{
+    MMMenuItem *menuItem = [[MMMenuItem alloc] init];
+    [menuItem setValue:dict[@"name"] forKey:@"name"];
+    
+    id mapping =
+    @{
+        @"kcal": @"calories",
+        @"fat": @"fat",
+        @"sfa": @"saturatedFat",
+        @"fatrn": @"transFat",
+        @"chol": @"cholesterol",
+        @"na": @"sodium",
+        @"cho": @"carbohydrates",
+        @"tdfb": @"fiber",
+        @"sugar": @"sugar",
+        @"pro": @"pro",
+      };
+
+    menuItem.servingSize = dict[@"serving_size"];
+    menuItem.portionSize = [dict[@"portion_size"] intValue];
+    
+    NSDictionary *nutrition = dict[@"nutrition"];
+    
+    menuItem.calories = [nutrition[@"kcal"] intValue];
+    menuItem.caloriesFromFat = [nutrition[@"kj"] intValue];
+    menuItem.fat = [nutrition[@"fat"] intValue];
+    menuItem.saturatedFat = [nutrition[@"sfa"] intValue];
+    menuItem.transFat = [nutrition[@"fatrn"] intValue];
+    menuItem.cholesterol = [nutrition[@"chol"] intValue];
+    menuItem.sodium = [nutrition[@"na"] intValue];
+    menuItem.carbohydates = [nutrition[@"cho"] intValue];
+    menuItem.fiber = [nutrition[@"tdfb"] intValue];
+    menuItem.sugar = [nutrition[@"sugar"] intValue];
+    menuItem.protein = [nutrition[@"pro"] intValue];
+
+    return menuItem;
+}
+
 
 // This function contains XML parsing specific to the schema that UMich uses to represent their menu data.
 MMMenu *menuFromXMLDictionary(NSDictionary *dict)
@@ -109,11 +148,7 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict)
             
             for (id item in menuitems)
             {
-                MMMenuItem *menuItem = [[MMMenuItem alloc] init];
-                [menuItem setValue:item[@"name"] forKey:@"name"];
-                
-                //TODO: Also grab the nutrition info.
-                
+                MMMenuItem *menuItem = menuItemFromDictionary(item);
                 [courseItems addObject:menuItem];
             }
             

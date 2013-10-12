@@ -12,10 +12,6 @@
 
 @property (readonly) NSString *name;
 
-@end
-
-@interface MMMenuItem (Nutrition)
-
 @property (readonly) int calories;
 @property (readonly) int caloriesFromFat;
 
@@ -30,5 +26,8 @@
 @property (readonly) int fiber;
 @property (readonly) int sugar;
 @property (readonly) int protein;
+
+@property (readonly) int portionSize;
+@property (readonly) NSString *servingSize;
 
 @end
