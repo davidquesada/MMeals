@@ -25,8 +25,10 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict);
 
 +(void)load
 {
-    dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"yyyy-MM-dd";
+    @autoreleasepool {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateFormat = @"yyyy-MM-dd";
+    }
 }
 
 +(void)fetchMenuForDiningHall:(MMDiningHall *)hall date:(NSDate *)date completion:(MMNetworkCompletionBlock)completion
