@@ -10,3 +10,7 @@
 #import "MMCourse.h"
 #import "MMMenu.h"
 #import "MMDiningHall.h"
+
+NSString *MMMealTypeToString(MMMealType type);
+
+MMMealType MMMealTypeFromTime(NSDate *date);

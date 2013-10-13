@@ -18,3 +18,17 @@ NSString *MMMealTypeToString(MMMealType type)
         return @"Dinner";
     return nil;
 }
+
+MMMealType MMMealTypeFromTime(NSDate *date)
+{
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *components = [cal components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:date];
+    
+    double time = (double)components.hour + (double)components.minute / 60.0;
+    
+    if (time < 10.5)
+        return MMMealTypeBreakfast;
+    if (time < 4.5)
+        return MMMealTypeLunch;
+    return MMMealTypeDinner;
+}

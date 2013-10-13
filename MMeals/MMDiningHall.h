@@ -10,14 +10,17 @@
 #import "MMealsBase.h"
 
 @class MMMenu;
+@class CLLocation;
 
 @interface MMDiningHall : NSObject
 
 @property (readonly) NSString *name;
 @property (readonly) MMDiningHallType type;
+@property (readonly) CLLocation *location;
 
 +(NSArray *)allDiningHalls;
 +(instancetype)diningHallOfType:(MMDiningHallType)type;
++(instancetype)diningHallClosestToLocation:(CLLocation *)location;
 
 -(void)fetchMenuInformationForToday:(MMFetchCompletionBlock)completion;
 -(void)fetchMenuInformationForDate:(NSDate *)date completion:(MMFetchCompletionBlock)completion;

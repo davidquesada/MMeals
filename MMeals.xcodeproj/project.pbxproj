@@ -21,6 +21,7 @@
 		635FA8B718025AED00AF4226 /* MMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 635FA8B618025AED00AF4226 /* MMMenuItem.m */; };
 		639645511808B98C00CCAE55 /* NSDate+SimpleFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 639645501808B98C00CCAE55 /* NSDate+SimpleFormatting.m */; };
 		63A2327618088E9400353A6C /* MMeals.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A2327518088E9400353A6C /* MMeals.m */; };
+		63C6D732180A3E8D0012ABFF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C6D731180A3E8D0012ABFF /* CoreLocation.framework */; };
 		63ED8A9318067EB800EFD36C /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ED8A9218067EB800EFD36C /* XMLDictionary.m */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		6396454F1808B98C00CCAE55 /* NSDate+SimpleFormatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+SimpleFormatting.h"; path = "Categories/NSDate+SimpleFormatting.h"; sourceTree = "<group>"; };
 		639645501808B98C00CCAE55 /* NSDate+SimpleFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+SimpleFormatting.m"; path = "Categories/NSDate+SimpleFormatting.m"; sourceTree = "<group>"; };
 		63A2327518088E9400353A6C /* MMeals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMeals.m; sourceTree = "<group>"; };
+		63C6D731180A3E8D0012ABFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		63ED8A8F1806746B00EFD36C /* MMMenuPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MMMenuPrivate.h; path = Network/MMMenuPrivate.h; sourceTree = "<group>"; };
 		63ED8A9118067EB800EFD36C /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLDictionary.h; path = Network/XMLDictionary/XMLDictionary.h; sourceTree = "<group>"; };
 		63ED8A9218067EB800EFD36C /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLDictionary.m; path = Network/XMLDictionary/XMLDictionary.m; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C6D732180A3E8D0012ABFF /* CoreLocation.framework in Frameworks */,
 				635FA89A18024F9D00AF4226 /* libMMeals.a in Frameworks */,
 				635FA89418024F9D00AF4226 /* XCTest.framework in Frameworks */,
 				635FA89518024F9D00AF4226 /* Foundation.framework in Frameworks */,
@@ -137,6 +140,7 @@
 		635FA88418024F9C00AF4226 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63C6D731180A3E8D0012ABFF /* CoreLocation.framework */,
 				635FA88518024F9D00AF4226 /* Foundation.framework */,
 				635FA89318024F9D00AF4226 /* XCTest.framework */,
 			);

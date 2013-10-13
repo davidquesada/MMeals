@@ -9,6 +9,7 @@
 #import "MMDiningHall.h"
 #import "MMDiningHallPrivate.h"
 #import "MMNetworkInterface.h"
+#import <CoreLocation/CoreLocation.h>
 
 NSArray *diningHallTypes;
 NSArray *diningHallInstances;
@@ -39,8 +40,9 @@ NSInteger dateReference(NSDate *date)
 
 @property (readwrite) NSString *name;
 @property (readwrite) MMDiningHallType type;
+@property (readwrite) CLLocation *location;
 
--(instancetype)initWithType:(MMDiningHallType)type name:(NSString *)name location:(NSString *)location;
+-(instancetype)initWithType:(MMDiningHallType)type name:(NSString *)name urlParam:(NSString *)urlParam location:(CLLocation *)location;
 
 @end
 
@@ -49,17 +51,17 @@ NSInteger dateReference(NSDate *date)
 
 +(void)load
 {
-#define CREATE(Type,Name,Location) [[MMDiningHall alloc] initWithType:Type name:Name location:Location]
+#define CREATE(Type,Name,Location,Latitude,Longitude) [[MMDiningHall alloc] initWithType:Type name:Name urlParam:Location location:[[CLLocation alloc] initWithLatitude:Latitude longitude:Longitude]]
     diningHalls = @{
-                    @(MMDiningHallBarbour)      : CREATE(MMDiningHallBarbour, @"Barbour", @"BARBOUR DINING HALL"),
-                    @(MMDiningHallBursley)      : CREATE(MMDiningHallBursley, @"Bursley", @"BURSLEY DINING HALL"),
-                    @(MMDiningHallEastQuad)     : CREATE(MMDiningHallEastQuad, @"East Quad", @"EAST QUAD DINING HALL"),
-                    @(MMDiningHallMarketplace)  : CREATE(MMDiningHallMarketplace, @"Marketplace at Hill", @"MARKETPLACE"),
-                    @(MMDiningHallMarkley)      : CREATE(MMDiningHallMarkley, @"Markley", @"MARKLEY DINING HALL"),
-                    @(MMDiningHallNorthQuad)    : CREATE(MMDiningHallNorthQuad, @"North Quad", @"North Quad Dining Hall"),
-                    @(MMDiningHallSouthQuad)    : CREATE(MMDiningHallSouthQuad, @"South Quad", @"SOUTH QUAD DINING HALL"),
-                    @(MMDiningHallTwigs)        : CREATE(MMDiningHallTwigs, @"Twigs", @"Twigs at Oxford"),
-                    @(MMDiningHallWestQuad)     : CREATE(MMDiningHallWestQuad, @"West Quad", @"WEST QUAD DINING HALL"),
+                    @(MMDiningHallBarbour)      : CREATE(MMDiningHallBarbour, @"Barbour", @"BARBOUR DINING HALL", 42.277136, -83.741623),
+                    @(MMDiningHallBursley)      : CREATE(MMDiningHallBursley, @"Bursley", @"BURSLEY DINING HALL", 42.293764, -83.720925),
+                    @(MMDiningHallEastQuad)     : CREATE(MMDiningHallEastQuad, @"East Quad", @"EAST QUAD DINING HALL", 42.27294, -83.735178),
+                    @(MMDiningHallMarketplace)  : CREATE(MMDiningHallMarketplace, @"Marketplace at Hill", @"MARKETPLACE", 42.280109, -83.731632),
+                    @(MMDiningHallMarkley)      : CREATE(MMDiningHallMarkley, @"Markley", @"MARKLEY DINING HALL", 42.280875, -83.728864),
+                    @(MMDiningHallNorthQuad)    : CREATE(MMDiningHallNorthQuad, @"North Quad", @"North Quad Dining Hall", 42.2807, -83.740295),
+                    @(MMDiningHallSouthQuad)    : CREATE(MMDiningHallSouthQuad, @"South Quad", @"SOUTH QUAD DINING HALL", 42.273718, -83.742109),
+                    @(MMDiningHallTwigs)        : CREATE(MMDiningHallTwigs, @"Twigs", @"Twigs at Oxford", 42.274667, -83.725302),
+                    @(MMDiningHallWestQuad)     : CREATE(MMDiningHallWestQuad, @"West Quad", @"WEST QUAD DINING HALL", 42.274881, -83.742565),
                     };
 #undef CREATE
     
@@ -82,7 +84,7 @@ NSInteger dateReference(NSDate *date)
     diningHallInstances = [diningHalls objectsForKeys:diningHallTypes notFoundMarker:[NSNull null]];
 }
 
--(instancetype)initWithType:(MMDiningHallType)type name:(NSString *)name location:(NSString *)location
+-(instancetype)initWithType:(MMDiningHallType)type name:(NSString *)name urlParam:(NSString *)urlParam location:(CLLocation *)location
 {
     self = [super init];
     if (self)
@@ -90,14 +92,10 @@ NSInteger dateReference(NSDate *date)
         self.menuInformation = [[NSMutableDictionary alloc] init];
         self.type = type;
         self.name = name.copy;
-        self.locationParameter = location.copy;
+        self.locationParameter = urlParam.copy;
+        self.location = location;
     }
     return self;
-}
-
-- (id)init
-{
-    return nil;
 }
 
 +(NSArray *)allDiningHalls
@@ -108,6 +106,24 @@ NSInteger dateReference(NSDate *date)
 +(instancetype)diningHallOfType:(MMDiningHallType)type
 {
     return diningHalls[@(type)];
+}
+
++(instancetype)diningHallClosestToLocation:(CLLocation *)location
+{
+    double min_distance = DBL_MAX;
+    MMDiningHall *hall = nil;
+    
+    for (MMDiningHall *h in diningHallInstances)
+    {
+        double dist = [location distanceFromLocation:h.location];
+        if (dist < min_distance)
+        {
+            min_distance = dist;
+            hall = h;
+        }
+    }
+    
+    return hall;
 }
 
 -(void)fetchMenuInformationForToday:(MMFetchCompletionBlock)completion

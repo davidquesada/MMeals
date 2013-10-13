@@ -70,20 +70,6 @@ MMMenuItem *menuItemFromDictionary(NSDictionary *dict)
 {
     MMMenuItem *menuItem = [[MMMenuItem alloc] init];
     [menuItem setValue:dict[@"name"] forKey:@"name"];
-    
-    id mapping =
-    @{
-        @"kcal": @"calories",
-        @"fat": @"fat",
-        @"sfa": @"saturatedFat",
-        @"fatrn": @"transFat",
-        @"chol": @"cholesterol",
-        @"na": @"sodium",
-        @"cho": @"carbohydrates",
-        @"tdfb": @"fiber",
-        @"sugar": @"sugar",
-        @"pro": @"pro",
-      };
 
     menuItem.servingSize = dict[@"serving_size"];
     menuItem.portionSize = [dict[@"portion_size"] intValue];
