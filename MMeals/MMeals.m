@@ -28,7 +28,7 @@ MMMealType MMMealTypeFromTime(NSDate *date)
     
     if (time < 10.5)
         return MMMealTypeBreakfast;
-    if (time < 4.5)
+    if (time < (12.0 + 4.5))
         return MMMealTypeLunch;
     return MMMealTypeDinner;
 }
