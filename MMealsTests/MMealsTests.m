@@ -44,14 +44,16 @@
         NSArray *dinner = [menu dinnerCourses];
         
         XCTAssertNotNil(dinner, @"The list of dinner courses is null.");
-        XCTAssertTrue(dinner.count == 6, @"Dinner is missing courses.");
+        XCTAssertTrue(dinner.count == 8, @"Dinner is missing courses.");
         
         id expectedResult = @[
                               @"Soup",
                               @"Salad",
                               @"Homestyles",
                               @"Olive Branch",
+                              @"Olive Branch Accompaniments",
                               @"Salsa",
+                              @"Salsa Accompaniments",
                               @"Dessert",
                               ];
         

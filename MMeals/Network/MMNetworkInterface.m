@@ -37,7 +37,8 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict);
         
         NSURL *url = [NSURL URLWithString:[self generateURLForRequestForDiningHall:hall date:date]];
         NSLog(@"%@", [url description]);
-        NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:nil];
+        NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:nil];
+        NSLog(@"Menu download complete.");
         
         NSDictionary *dict = [[[XMLDictionaryParser sharedInstance] copy] dictionaryWithData:data];
 
@@ -57,7 +58,7 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict);
         - with WebMenu: Soup, Salad, Homestyles, Olive Branch, Salsa, Dessert
         - w/o  WebMenu: Soup, Salad, Homestyles, Olive Branch, Olive Branch Accompaniments, Salsa, Salsa Accompaniments, Dessert
      */
-    NSString *format = @"http://www.housing.umich.edu/files/helper_files/js/menu2xml.php?location=%@&date=%@&display=WebMenu";
+    NSString *format = @"http://www.housing.umich.edu/files/helper_files/js/menu2xml.php?location=%@&date=%@";//&display=WebMenu";
     NSString *location = [hall.locationParameter stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *date = [dateFormatter stringFromDate:menuDate];
     
