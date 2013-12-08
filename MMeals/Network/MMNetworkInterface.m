@@ -79,17 +79,37 @@ MMMenuItem *menuItemFromDictionary(NSDictionary *dict)
     
     NSDictionary *nutrition = dict[@"nutrition"];
     
-    menuItem.calories = [nutrition[@"kcal"] intValue];
-    menuItem.caloriesFromFat = [nutrition[@"kj"] intValue];
-    menuItem.fat = [nutrition[@"fat"] intValue];
-    menuItem.saturatedFat = [nutrition[@"sfa"] intValue];
-    menuItem.transFat = [nutrition[@"fatrn"] intValue];
-    menuItem.cholesterol = [nutrition[@"chol"] intValue];
-    menuItem.sodium = [nutrition[@"na"] intValue];
-    menuItem.carbohydrates = [nutrition[@"cho"] intValue];
-    menuItem.fiber = [nutrition[@"tdfb"] intValue];
-    menuItem.sugar = [nutrition[@"sugar"] intValue];
-    menuItem.protein = [nutrition[@"pro"] intValue];
+    NSDictionary *mapping = @{
+                              @"kcal" : @"calories",
+                              @"kj" : @"caloriesFromFat",
+                              @"fat": @"fat",
+                              @"sfa": @"saturatedFat",
+                              @"fatrn": @"transFat",
+                              @"chol" : @"cholesterol",
+                              @"na" : @"sodium",
+                              @"cho" : @"carbohydrates",
+                              @"tdfb" : @"fiber",
+                              @"sugar" : @"sugar",
+                              @"pro" : @"protein",
+                                  
+    };
+    
+    id percentages = [NSMutableDictionary new];
+    
+    [mapping enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        
+        id tmp;
+        // Copy the amount of the nutrient into this MenuItem.
+        if ((tmp = nutrition[key]))
+            [menuItem setValue:tmp forKey:obj];
+        
+        // Copy the percentage of this nutrient into this MenuItem.
+        if ((tmp = nutrition[[key stringByAppendingString:@"_p"]]))
+            percentages[obj] = tmp;
+        
+    }];
+    
+    menuItem.percentages = percentages;
 
     return menuItem;
 }

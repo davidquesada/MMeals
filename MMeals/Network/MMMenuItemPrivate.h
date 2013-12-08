@@ -30,4 +30,6 @@
 @property (readwrite) int portionSize;
 @property (readwrite) NSString *servingSize;
 
+@property (readwrite) NSDictionary *percentages;
+
 @end
