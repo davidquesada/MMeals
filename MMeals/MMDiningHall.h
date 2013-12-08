@@ -22,6 +22,9 @@
 +(instancetype)diningHallOfType:(MMDiningHallType)type;
 +(instancetype)diningHallClosestToLocation:(CLLocation *)location;
 
+-(void)clearCachedMenuInformation;
+-(void)clearCachedMenuInformationForDate:(NSDate *)date;
+
 -(void)fetchMenuInformationForToday:(MMFetchCompletionBlock)completion;
 -(void)fetchMenuInformationForDate:(NSDate *)date completion:(MMFetchCompletionBlock)completion;
 

@@ -126,6 +126,16 @@ NSInteger dateReference(NSDate *date)
     return hall;
 }
 
+-(void)clearCachedMenuInformation
+{
+    [self.menuInformation removeAllObjects];
+}
+
+-(void)clearCachedMenuInformationForDate:(NSDate *)date
+{
+    [self.menuInformation removeObjectForKey:@(dateReference(date))];
+}
+
 -(void)fetchMenuInformationForToday:(MMFetchCompletionBlock)completion
 {
     [self fetchMenuInformationForDate:[NSDate date] completion:completion];
