@@ -37,7 +37,7 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict);
         
         NSURL *url = [NSURL URLWithString:[self generateURLForRequestForDiningHall:hall date:date]];
         NSLog(@"%@", [url description]);
-        NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:nil];
+        NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:nil];
         NSLog(@"Menu download complete.");
         
         NSDictionary *dict = [[[XMLDictionaryParser sharedInstance] copy] dictionaryWithData:data];
