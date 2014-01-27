@@ -76,7 +76,7 @@ NSInteger dateReference(NSDate *date)
                         @(MMDiningHallMarketplace),
                         @(MMDiningHallMarkley),
                         @(MMDiningHallNorthQuad),
-                        @(MMDiningHallSouthQuad),
+                        //@(MMDiningHallSouthQuad),
                         @(MMDiningHallTwigs),
                         @(MMDiningHallWestQuad),
                         ];
