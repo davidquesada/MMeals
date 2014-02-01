@@ -20,6 +20,8 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict);
 
 @interface MMNetworkInterface ()
 
++(NSData *)fetchDataForDiningHall:(MMDiningHall *)hall date:(NSDate *)date;
+
 @end
 
 @implementation MMNetworkInterface
@@ -36,11 +38,7 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict);
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul), ^{
         
-        NSURL *url = [NSURL URLWithString:[self generateURLForRequestForDiningHall:hall date:date]];
-        NSLog(@"%@", [url description]);
-        NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:nil];
-        NSLog(@"Menu download complete.");
-        
+        NSData *data = [self fetchDataForDiningHall:hall date:date];
         NSDictionary *dict = [[[XMLDictionaryParser sharedInstance] copy] dictionaryWithData:data];
 
         MMMenu *menu = menuFromXMLDictionary(dict);
@@ -49,6 +47,29 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict);
             completion(menu);
         });
     });
+}
+
++(NSData *)fetchDataForDiningHall:(MMDiningHall *)hall date:(NSDate *)date
+{
+    // Attempt to get data from the disk cache if possible.
+    MMCacheManager *cache = [MMCacheManager defaultManager];
+    
+    NSData *data = [cache fetchCacheDataForDiningHall:hall date:date];
+    if (data)
+    {
+        NSLog(@"Found cached menu data.");
+        return data;
+    }
+    NSLog(@"Unable to find data in cache, going to the network.");
+    
+    NSURL *url = [NSURL URLWithString:[self generateURLForRequestForDiningHall:hall date:date]];
+    NSLog(@"%@", [url description]);
+    data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:nil];
+    NSLog(@"Menu download complete.");
+    
+    [cache addCacheData:data diningHall:hall date:date];
+    
+    return data;
 }
 
 +(NSString *)generateURLForRequestForDiningHall:(MMDiningHall *)hall date:(NSDate *)menuDate
@@ -91,8 +112,7 @@ MMMenuItem *menuItemFromDictionary(NSDictionary *dict)
                               @"cho" : @"carbohydrates",
                               @"tdfb" : @"fiber",
                               @"sugar" : @"sugar",
-                              @"pro" : @"protein",
-                                  
+                              @"pro" : @"protein",    
     };
     
     id percentages = [NSMutableDictionary new];
