@@ -11,6 +11,7 @@
 #import "MMMenuPrivate.h"
 #import "MMCoursePrivate.h"
 #import "MMMenuItemPrivate.h"
+#import "MMCacheManagerPrivate.h"
 #import "XMLDictionary.h"
 
 NSDateFormatter *dateFormatter;

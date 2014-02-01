@@ -8,6 +8,8 @@
 
 #import "MMDiningHall.h"
 
+NSInteger MMDiningHallDateReference(NSDate *date);
+
 @interface MMDiningHall ()
 
 @property NSString *locationParameter;

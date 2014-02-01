@@ -18,7 +18,7 @@ NSDictionary *diningHalls;
 
 /// Helper Functions
 
-NSInteger dateReference(NSDate *date)
+NSInteger MMDiningHallDateReference(NSDate *date)
 {
     static NSCalendar *gregorianCalendar = nil;
     static NSDate *referenceDate = nil;
@@ -133,7 +133,7 @@ NSInteger dateReference(NSDate *date)
 
 -(void)clearCachedMenuInformationForDate:(NSDate *)date
 {
-    [self.menuInformation removeObjectForKey:@(dateReference(date))];
+    [self.menuInformation removeObjectForKey:@(MMDiningHallDateReference(date))];
 }
 
 -(void)fetchMenuInformationForToday:(MMFetchCompletionBlock)completion
@@ -152,7 +152,7 @@ NSInteger dateReference(NSDate *date)
     // First, check to see if we have already fetched data for the current date from
     // the server and cached it in self.menuInformation. If so, used the cached version.
     
-    NSInteger ref = dateReference(date);
+    NSInteger ref = MMDiningHallDateReference(date);
     id info = self.menuInformation[@(ref)];
     
     if (info)
@@ -179,7 +179,7 @@ NSInteger dateReference(NSDate *date)
 
 -(MMMenu *)menuInformationForDate:(NSDate *)date
 {
-    NSInteger ref = dateReference(date);
+    NSInteger ref = MMDiningHallDateReference(date);
     return self.menuInformation[@(ref)];
 }
 
