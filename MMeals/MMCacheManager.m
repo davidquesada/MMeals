@@ -15,7 +15,9 @@
 -(id)initAsDefaultManager;
 -(void)configureDefaultCache;
 -(NSString *)defaultCachePath;
+-(NSString *)cacheDirectoryForDiningHall:(MMDiningHall *)hall;
 -(NSString *)cacheFilePathForDiningHall:(MMDiningHall *)hall date:(NSDate *)date;
+-(void)limitCacheSizeInDirectory:(NSString *)path;
 -(void)ensurePathExists:(NSString *)path;
 
 @end
@@ -67,14 +69,20 @@
     }
 }
 
+-(NSString *)cacheDirectoryForDiningHall:(MMDiningHall *)hall
+{
+    NSString *hallComponent = [NSString stringWithFormat:@"%d", (int)hall.type];
+    NSString *path = [self cachePath];
+    path = [path stringByAppendingPathComponent:hallComponent];
+    [self ensurePathExists:path];
+    return path;
+}
+
 -(NSString *)cacheFilePathForDiningHall:(MMDiningHall *)hall date:(NSDate *)date
 {
-    NSString *hallDirectory = [NSString stringWithFormat:@"%d", (int)hall.type];
     NSString *dateFile = [NSString stringWithFormat:@"%d", MMDiningHallDateReference(date)];
     
-    NSString *path = [self cachePath];
-    path = [path stringByAppendingPathComponent:hallDirectory];
-    [self ensurePathExists:path];
+    NSString *path = [self cacheDirectoryForDiningHall:hall];
     path = [path stringByAppendingPathComponent:dateFile];
     return path;
 }
@@ -92,6 +100,29 @@
     }
 }
 
+-(void)limitCacheSizeInDirectory:(NSString *)path
+{
+    if (self.maximumLength < 0)
+        return;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray *filenames = [fm contentsOfDirectoryAtPath:path error:nil];
+    if (filenames.count <= self.maximumLength)
+        return;
+    
+    // This next part (the part that eliminates extra cachefiles) makes the assumption
+    // that older menus are less important.
+    filenames = [filenames sortedArrayUsingSelector:@selector(compare:)];
+    
+    int deleteCount = (filenames.count - self.maximumLength);
+    NSLog(@"Removing %d items from disk cache", deleteCount);
+    for (int i = 0; i < deleteCount; ++i)
+    {
+        NSString *filename = [path stringByAppendingPathComponent:filenames[i]];
+        BOOL result = [fm removeItemAtPath:filename error:nil];
+        NSLog(@"Result: %d", result);
+    }
+}
+
 #pragma mark - Cache Implementation
 
 -(void)addCacheData:(NSData *)data diningHall:(MMDiningHall *)hall date:(NSDate *)date
@@ -101,7 +132,11 @@
     NSString *path = [self cacheFilePathForDiningHall:hall date:date];
     BOOL result = [data writeToFile:path atomically:YES];
     if (!result)
+    {
         NSLog(@"Unable to write cache to %@", path);
+        return;
+    }
+    [self limitCacheSizeInDirectory:[self cacheDirectoryForDiningHall:hall]];
 }
 
 -(NSData *)fetchCacheDataForDiningHall:(MMDiningHall *)hall date:(NSDate *)date
