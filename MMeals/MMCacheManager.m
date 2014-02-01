@@ -81,6 +81,8 @@
 
 -(void)addCacheData:(NSData *)data diningHall:(MMDiningHall *)hall date:(NSDate *)date
 {
+    if (!_cachingEnabled)
+        return;
     NSString *path = [self cacheFilePathForDiningHall:hall date:date];
     BOOL result = [data writeToFile:path atomically:YES];
     if (!result)
@@ -89,6 +91,8 @@
 
 -(NSData *)fetchCacheDataForDiningHall:(MMDiningHall *)hall date:(NSDate *)date
 {
+    if (!_cachingEnabled)
+        return nil;
     NSString *path = [self cacheFilePathForDiningHall:hall date:date];
     NSData *data = [NSData dataWithContentsOfFile:path];
     return data;
