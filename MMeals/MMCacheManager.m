@@ -16,6 +16,7 @@
 -(void)configureDefaultCache;
 -(NSString *)defaultCachePath;
 -(NSString *)cacheFilePathForDiningHall:(MMDiningHall *)hall date:(NSDate *)date;
+-(void)ensurePathExists:(NSString *)path;
 
 @end
 
@@ -73,8 +74,22 @@
     
     NSString *path = [self cachePath];
     path = [path stringByAppendingPathComponent:hallDirectory];
+    [self ensurePathExists:path];
     path = [path stringByAppendingPathComponent:dateFile];
     return path;
+}
+
+-(void)ensurePathExists:(NSString *)path
+{
+    NSError * error = nil;
+    [[NSFileManager defaultManager] createDirectoryAtPath:path
+                              withIntermediateDirectories:YES
+                                               attributes:nil
+                                                    error:&error];
+    if (error)
+    {
+        NSLog(@"error creating directory: %@", error);
+    }
 }
 
 #pragma mark - Cache Implementation
