@@ -14,6 +14,7 @@
 @property BOOL cachingEnabled;
 @property int maximumLength;
 @property NSString *cachePath;
+
 -(void)clearMemoryCache;
 
 @end

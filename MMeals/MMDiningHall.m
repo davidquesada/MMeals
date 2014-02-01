@@ -34,6 +34,14 @@ NSInteger MMDiningHallDateReference(NSDate *date)
     return [components day];
 }
 
+NSArray *MMDiningHallList()
+{
+    static NSArray *array = nil;
+    if (array == nil)
+        array = diningHalls.allValues;
+    return array;
+}
+
 @interface MMDiningHall ()
 
 @property NSMutableDictionary *menuInformation;

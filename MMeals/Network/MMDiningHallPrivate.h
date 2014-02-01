@@ -9,6 +9,7 @@
 #import "MMDiningHall.h"
 
 NSInteger MMDiningHallDateReference(NSDate *date);
+NSArray *MMDiningHallList();
 
 @interface MMDiningHall ()
 
