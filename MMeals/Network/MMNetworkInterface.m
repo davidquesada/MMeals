@@ -36,9 +36,12 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul), ^{
         
         NSURL *url = [NSURL URLWithString:[self generateURLForRequestForDiningHall:hall date:date]];
-        NSLog(@"%@", [url description]);
-        NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:nil];
-        NSLog(@"Menu download complete.");
+        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5.0];
+        NSError *error = nil;
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&error];
+        
+        if (error)
+            NSLog(@"Failed to get menu: %@", error);
         
         NSDictionary *dict = [[[XMLDictionaryParser sharedInstance] copy] dictionaryWithData:data];
 
