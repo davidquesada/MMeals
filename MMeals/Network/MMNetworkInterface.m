@@ -40,12 +40,15 @@ MMMenu *menuFromXMLDictionary(NSDictionary *dict);
         NSError *error = nil;
         NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&error];
         
+        MMMenu *menu = nil;
+        
         if (error)
             NSLog(@"Failed to get menu: %@", error);
-        
-        NSDictionary *dict = [[[XMLDictionaryParser sharedInstance] copy] dictionaryWithData:data];
-
-        MMMenu *menu = menuFromXMLDictionary(dict);
+        else
+        {
+            NSDictionary *dict = [[[XMLDictionaryParser sharedInstance] copy] dictionaryWithData:data];
+            menu = menuFromXMLDictionary(dict);
+        }
         
         dispatch_sync(dispatch_get_main_queue(), ^{
             completion(menu);
