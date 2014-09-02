@@ -70,15 +70,15 @@ NSInteger dateReference(NSDate *date)
     // useful for removing dining halls that are closed for renovation so they don't appear in applications.
     
     diningHallTypes = @[
-                        @(MMDiningHallBarbour),
+                        //@(MMDiningHallBarbour),
                         @(MMDiningHallBursley),
                         @(MMDiningHallEastQuad),
                         @(MMDiningHallMarketplace),
                         @(MMDiningHallMarkley),
                         @(MMDiningHallNorthQuad),
-                        //@(MMDiningHallSouthQuad),
+                        @(MMDiningHallSouthQuad),
                         @(MMDiningHallTwigs),
-                        @(MMDiningHallWestQuad),
+                        //@(MMDiningHallWestQuad),
                         ];
     
     diningHallInstances = [diningHalls objectsForKeys:diningHallTypes notFoundMarker:[NSNull null]];
